@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int *strr(char str_1[]) {
+    int j = 0;
+    static char str_2[100];
+    for(int i = (strlen(str_1)-1) ; i>=0 ; i--) {
+        str_2[j] = str_1[i];
+        j++;
+    }
+    str_2[++j] = '\0';
+    return (str_2);
+}
+
+int main()
+{
+    char str_1[100];
+    char str_2[100];
+    char *p;
+    printf("Write the word: ");
+    gets(str_1);
+    p = strr(str_1);
+    printf("Reverse Your Word: %s",p);
+    return 0;
+}
